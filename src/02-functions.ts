@@ -45,10 +45,20 @@ function sortColleagues(
   return fullResult.slice(0,end)
 }
 
+function addInterest(f: Friend, interest: string) {
+  if (f.interests === undefined) {
+    f.interests = [];}
+    f.interests.push(interest);
+    return f.interests;
+  }
+
+
+
 //test invocations of sortColleagues
 console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
 console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
 console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
+console.log(addInterest(friends[0], 'Politics'))
 
 
 
