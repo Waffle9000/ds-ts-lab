@@ -16,6 +16,15 @@ function highestExtension(cs: Colleague[]) {
   return result[cs.length - 1];
 }
 
+function findFriends(
+  friends: Friend[],
+  criterion: (friend: Friend) => boolean
+): Friend[] {
+  return friends.filter(criterion);
+}
+
+console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
+console.log(findFriends(friends, (friend) => friend.age < 35));
 function addColleague(cs: Colleague[], name: string, department: string, email: string){
   const highestExt = highestExtension(cs);
   const newColleague: Colleague = {
@@ -55,15 +64,16 @@ function addInterest(f: Friend, interest: string) {
 
 
 //test invocations of sortColleagues
-console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
-console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
-console.log(addInterest(friends[0], 'Politics'))
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
+// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
+// console.log(addInterest(friends[0], 'Politics'))
 
 
-
-addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
-console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
+console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
+console.log(findFriends(friends, (friend) => friend.age < 35));
+// addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
+// console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
 
 
 
