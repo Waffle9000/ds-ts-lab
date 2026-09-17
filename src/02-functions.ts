@@ -64,16 +64,16 @@ function addInterest(f: Friend, interest: string) {
 
 
 //test invocations of sortColleagues
-// console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
-// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
-// console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
-// console.log(addInterest(friends[0], 'Politics'))
+console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
+console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
+console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length)));
+console.log(addInterest(friends[0], 'Politics'))
 
 
 console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
 console.log(findFriends(friends, (friend) => friend.age < 35));
-// addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
-// console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
+addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
+console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
 
 
 
