@@ -26,6 +26,30 @@ export interface EmailContact {
     email: string
 }
 
+export interface MenuItem{
+  id: number;
+  name: string;
+  course: Course;
+  price: number;
+  nutrition: {
+    calories: number;
+    allergens: string[];
+  }
+discountPercent?: number;
+availableFrom?: Date;
+}
+
+export type Course = "start" | "main" | "dessert";
+
+
+export interface ComboDeal {
+  id: number;
+  name: string;
+  items: MenuItem[];
+  price: number;
+}
+
+export type OrderLine = MenuItem | ComboDeal;
 
 export type Department = "Engineering" | "Finance" | "HR";
 export interface ColleagueV2 {
